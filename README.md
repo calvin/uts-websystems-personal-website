@@ -1,2 +1,7 @@
 # uts-websystems-personal-website
-Source code (eh, it's basic) for the web systems personal website assessment
+## Student ID   : 13247818
+## Author       : Dylan West (dwest)
+
+The website is a simple "About yourself" website with simple html and css files.
+
+This is available at [www-student.it.uts.edu.au](http://www-student.it.uts.edu.au/~13247818/index.html);

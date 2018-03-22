@@ -1,6 +1,7 @@
 # uts-websystems-personal-website
 ## Student ID   : 13247818
 ## Author       : Dylan West (dwest)
+## Project Type : First Year University Assessment.
 
 The website is a simple "About yourself" website with simple html and css files.
 
@@ -33,3 +34,9 @@ LESS:
 ```
 lessc websystems.less websystems.css
 ```
+
+## Things I miss, 
+1. JQuery
+2. Angular
+3. Bootstrap
+4. anything modern. 

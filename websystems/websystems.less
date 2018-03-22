@@ -195,6 +195,10 @@ Containers
     text-decoration: underline
 }
 
+.lighter-purple-container {
+    background-color: @lighter-purple;
+}
+
 .grey-container {
     background-color: @grey;
 }
@@ -252,6 +256,16 @@ experience
 Media
 */
 
-@media screen and (max-width: 745px) {
+@media screen and (max-width: 1000px) { /*index break about and contact and make width 100%*/
+    .about-container {
+        display: block
+    }
 
+    .about {
+        width: 90%;
+    }
+
+    .contact {
+        width: 90%;
+    }
 }

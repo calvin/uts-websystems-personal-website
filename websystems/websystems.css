@@ -170,6 +170,9 @@ Containers
 .contact a:hover {
   text-decoration: underline;
 }
+.lighter-purple-container {
+  background-color: #c49cc2;
+}
 .grey-container {
   background-color: #bababa;
 }
@@ -204,3 +207,15 @@ experience
 /*
 Media
 */
+@media screen and (max-width: 1000px) {
+  /*index break about and contact and make width 100%*/
+  .about-container {
+    display: block;
+  }
+  .about {
+    width: 90%;
+  }
+  .contact {
+    width: 90%;
+  }
+}

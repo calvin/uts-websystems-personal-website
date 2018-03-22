@@ -50,8 +50,11 @@ https://www.w3schools.com/howto/howto_css_rounded_images.asp
     position: relative;
     overflow: hidden;
     padding-bottom: 10%;
-    padding-top: 10%;
     margin-bottom: 0;
+}
+
+.hero {
+    padding-top: 75px; /*so that the avatar has a nice gap between the nav and itself*/
 }
 
 .hero img{
@@ -138,10 +141,10 @@ I have some java script to hide the navbar on scroll aswell though.
 }
 
 /*
-Containers
+Containers and Divs
 */
 .container {
-    padding: 10% 0%;
+    padding: 5% 0%;
     float: left;
 }
 
@@ -195,6 +198,25 @@ Containers
     text-decoration: underline
 }
 
+.work-experience, #work-experience {
+    padding: 5%;
+    text-align: left;
+    float: left;
+    width: 50%;
+}
+
+.academic-history, #academic-history {
+    padding: 5%;
+    text-align: left;
+    float: left;
+    background: #c49cc2;
+    width: 50%;
+}
+
+.past-article {
+    padding: 50px 5%;
+}
+
 .lighter-purple-container {
     background-color: @lighter-purple;
 }
@@ -237,19 +259,31 @@ experience
 */
 
 .experience {
-
+    list-style: none;
+    padding-left: 0;
 }
 
 .experience-details {
+    letter-spacing: 0.5px;
+}
 
+.experience-details li, .experience-details ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.experience-details h3 {
+    font-weight: bold;
+    margin-bottom: 0;
 }
 
 .institution-detail {
-
+    font-weight: bold;
+    font-size: 1.25em;
 }
 
 .role-detail {
-
+    font-size: 1em;
 }
 
 /*
@@ -261,11 +295,7 @@ Media
         display: block
     }
 
-    .about {
-        width: 90%;
-    }
-
-    .contact {
+    .about, .contact, .work-experience, #work-experience, .academic-history, #academic-history {
         width: 90%;
     }
 }

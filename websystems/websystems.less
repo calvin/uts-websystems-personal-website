@@ -1,0 +1,257 @@
+/*
+Colours:
+
+Here so the colour values will show in css for peer marking as the variable... lame I know.
+@dark-purple: #5e315c;
+@purple: #753f73;;
+@light-purple: #885786;
+@lighter-purple: #c49cc2;
+@grey: #bababa;
+@light-grey: #eaeaea;
+*/
+
+@dark-purple: #5e315c;
+@purple: #753f73;;
+@light-purple: #885786;
+@lighter-purple: #c49cc2;
+@grey: #bababa;
+@light-grey: #eaeaea;
+@alternate-text-colour: white;
+
+
+/*
+Fonts - we aren't allowed to use external files or css annoyingly, I'll put them in just incase though.
+https://fonts.google.com/specimen/Roboto?selection.family=Open+Sans|Roboto
+normally you'd add this in your head:
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+*/
+
+html, body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*
+Hero specific
+Creating rounded images adapted from this solution:
+https://www.w3schools.com/howto/howto_css_rounded_images.asp
+*/
+.hero-container {
+    background-color: @light-purple;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    margin-bottom: 0;
+}
+
+.hero img{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    margin: 4px;
+    border: 4px solid @purple;
+    width: 200px;
+}
+
+/* https://stackoverflow.com/questions/1844207/how-to-make-a-div-to-wrap-two-float-divs-inside */
+#hero-clear, .hero-clear {
+    clear: both;
+}
+
+/*
+Nav Bar Specific
+normally I'd use bootstrap or something else but for this I implemented something based on this solution:
+https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_responsive
+
+Normally I would have it collapse and add a hamburger menu but since the sites have to work without javascript I'm doing it this way,
+I have some java script to hide the navbar on scroll aswell though.
+*/
+.nav-container {
+    background-color: @dark-purple;
+    padding: 0 50px;
+}
+
+.navbar {
+    transition: top 0.33s ease-in-out;
+    margin-bottom: 0;
+    background-color: @dark-purple;
+    z-index: 1000;
+    border: 0;
+    font-size: 12px ;
+    line-height: 1.42857143;
+    letter-spacing: 2px;
+    border-radius: 0;
+    border-bottom: 4px solid @purple;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar li a {
+    color: white;
+}
+
+.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: @dark-purple;
+}
+
+.navbar-links li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+}  
+
+.navbar-links li {
+    float: left;
+}
+
+.navbar-links li a:hover{
+    color: @dark-purple;
+    background-color: white;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: -4px;
+}
+
+.navbar-links li a.active {
+    color: white;
+    background-color: @light-purple;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: -4px;
+}
+
+/*
+Containers
+*/
+.container {
+    padding: 10% 0%;
+    float: left;
+}
+
+.about-container {
+    background: @light-grey;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    display: flex;
+    flex-grow: row wrap;
+}
+
+.about {
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 1.66%;
+    text-align: left;
+    float: left;
+    width: 50%;
+}
+
+.contact {
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: left;
+    float: left;
+    background: #c49cc2;
+    width: 33.33%;
+}
+
+.contact table {
+    font-weight: bold;
+}
+
+.contact a {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.contact a:visited {
+    color: black;
+    background-color: transparent;
+}
+
+.contact a:hover {
+    text-decoration: underline
+}
+
+.grey-container {
+    background-color: @grey;
+}
+
+.light-grey-container {
+    background-color: @light-grey;
+}
+
+.footer {
+    color: white;
+    bottom: 0;
+    background-color: @dark-purple;
+    float: left;
+    padding: 20px 5%;
+    width: 90%;
+    margin-top: 0;
+    border-top: 4px solid @purple;
+}
+
+.footer a {
+    color: @alternate-text-colour;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.footer a:visited {
+    color: @alternate-text-colour;
+    background-color: transparent;
+}
+
+.footer a:hover {
+    text-decoration: underline
+}
+/*
+experience
+*/
+
+.experience {
+
+}
+
+.experience-details {
+
+}
+
+.institution-detail {
+
+}
+
+.role-detail {
+
+}
+
+/*
+Media
+*/
+
+@media screen and (max-width: 745px) {
+
+}

@@ -6,14 +6,17 @@ Here so the colour values will show in css for peer marking as the variable... l
 @purple: #753f73;;
 @light-purple: #885786;
 @lighter-purple: #c49cc2;
+@dark-grey: #3d3a3a;
 @grey: #bababa;
 @light-grey: #eaeaea;
+@alternate-text-colour: white;
 */
 
 @dark-purple: #5e315c;
 @purple: #753f73;;
 @light-purple: #885786;
 @lighter-purple: #c49cc2;
+@dark-grey: #3d3a3a;
 @grey: #bababa;
 @light-grey: #eaeaea;
 @alternate-text-colour: white;
@@ -47,7 +50,6 @@ https://www.w3schools.com/howto/howto_css_rounded_images.asp
     background-color: @light-purple;
     text-align: center;
     color: white;
-    position: relative;
     overflow: hidden;
     padding-bottom: 10%;
     margin-bottom: 0;
@@ -286,6 +288,39 @@ experience
     font-size: 1em;
 }
 
+.example {
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: left;
+    float: left;
+    background: #ffffff;
+    width: 33.33%;
+}
+
+/*
+Accordian
+*/
+.show-accordian {
+    display: block;
+}
+
+.hide-accordian {
+    display: none;
+}
+
+.accordian-button {
+    text-align: center;
+    display: block;
+    width: 100%;
+    background-color: @dark-grey;
+    color: @alternate-text-colour;
+    letter-spacing: 1px;
+    padding: 20px;
+
+}
+
 /*
 Media
 */
@@ -295,7 +330,7 @@ Media
         display: block
     }
 
-    .about, .contact, .work-experience, #work-experience, .academic-history, #academic-history {
+    .about, .contact, .work-experience, #work-experience, .academic-history, #academic-history, .example {
         width: 90%;
     }
 }

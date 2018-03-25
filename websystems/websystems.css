@@ -6,8 +6,10 @@ Here so the colour values will show in css for peer marking as the variable... l
 @purple: #753f73;;
 @light-purple: #885786;
 @lighter-purple: #c49cc2;
+@dark-grey: #3d3a3a;
 @grey: #bababa;
 @light-grey: #eaeaea;
+@alternate-text-colour: white;
 */
 /*
 Fonts - we aren't allowed to use external files or css annoyingly, I'll put them in just incase though.
@@ -40,7 +42,6 @@ https://www.w3schools.com/howto/howto_css_rounded_images.asp
   background-color: #885786;
   text-align: center;
   color: white;
-  position: relative;
   overflow: hidden;
   padding-bottom: 10%;
   margin-bottom: 0;
@@ -248,6 +249,34 @@ experience
 .role-detail {
   font-size: 1em;
 }
+.example {
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: left;
+  float: left;
+  background: #ffffff;
+  width: 33.33%;
+}
+/*
+Accordian
+*/
+.show-accordian {
+  display: block;
+}
+.hide-accordian {
+  display: none;
+}
+.accordian-button {
+  text-align: center;
+  display: block;
+  width: 100%;
+  background-color: #3d3a3a;
+  color: white;
+  letter-spacing: 1px;
+  padding: 20px;
+}
 /*
 Media
 */
@@ -261,7 +290,8 @@ Media
   .work-experience,
   #work-experience,
   .academic-history,
-  #academic-history {
+  #academic-history,
+  .example {
     width: 90%;
   }
 }

@@ -19,8 +19,184 @@
             </div>
         </div>
         <div id="main-body" class="main-body">
-            <!--#region page-specific-content-->
-            <!--#endregion page-specific-content-->
+            <div id="About" class="about-container">
+                <div class="about">
+                    <h1>Comments</h1>
+                    <p>
+                        This page runs through the layout of this website, the CSS classes used, the design and why it was built like this.
+                    </p>
+                    <p>
+                        To the right is the comments index, you can click the links in it to be taken to the relevent section.
+                    </p>
+                    <p>
+                        Below are accordians that you can click on to show or hide the below divs, please note that when you see @variables that is because the examples are the LESS before it is compiled to CSS (lessc source destination)
+                    </p>
+                </div>
+                <div class="contact"> <!-- I don't feel the need to duplicate this class, hence why I used contact here insted of say, comment-index -->
+                    <h1>Index</h1>
+                    <ul>
+                        <li><a href="#layout-comments" class="" id="layout-comments-link">Colour Scheme</a></li>
+                        <li><a href="#hero-comments" class="" id="hero-comments-link">Hero</a></li>
+                        <li><a href="#navbar-comments" class="" id="navbar-comments-link">Navbar</a></li>
+                        <li><a href="#container-comments" class="" id="container-comments-link">Container</a></li>
+                        <li><a href="#experience-comments" class="" id="experience-comments-link">Experience</a></li>
+                        <li><a href="#media-comments" class="" id="media-comments-link"></a>Media</li>
+                        <li><a href="#misc-comments" class="" id="misc-comments-link"></a>Misc</li>
+                        <li><a href="#javascript-comments" class="" id="javascript-comments-link">Javascript</a></li>
+                    </ul>
+                </div>
+                <div id="#hero-clear" class="hero-clear"></div>
+            </div>
+            <div class="article">
+                <h1>Colour Scheme</h1>
+                <p>Quick note, I'm not going to go through the wireframing or the layout here because you can see for yourself how each page is laid out on this site by navigating to the 4 pages (including this one).</p>
+                <h2>Colours</h2>
+                <p>I started following a <a href="http://www.paletton.com/wiki/index.php?title=Monochromatic_color_scheme">monochromatic</a> colour scheme based on the base dark-purple colour, I deviated slightly with different types of purples because I thought they looked better and had better contrast on black / white.</p>
+                <p>I used less so I could use variables to store the colour values before compiling to css using the command "lessc websystems.less websystems.css"</p>
+                <p>Colours are more of a personal taste, (as long as you don't pick objectively bad colours), and I chose the dark-purple purely because it's my favorite colour and I wanted to limit myself to purples for this assessment.</p>
+                <h3>Colour Values</h3>
+                <ul>
+                    <li>@dark-purple: #5e315c;</li>
+                    <li>@purple: #753f73;</li>
+                    <li>@light-purple: #885786;</li>
+                    <li>@lighter-purple: #c49cc2;</li>
+                    <li>@dark-grey: #3d3a3a;</li>
+                    <li>@grey: #bababa;</li>
+                    <li>@light-grey: #eaeaea;</li>
+                    <li>@alternate-text-colour: white;</li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="toggleAccordian('hero-comments')" class="accordian-button">Hero Comments</button>
+                <div id="hero-comments" class="show-accordian">
+                    <div class="article">
+                            <h2>Hero Classes</h2>
+                            <p>
+                                The hero classes relate to the Hero container on the home page, you know that big purple block with my picture in the center.
+                            </p>
+                            <p>
+                                If you have used bootstrap before it looks kind of like a jumbotron, and that's what I was going for here.
+                            </p>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.hero-container</h3>
+                            <p>
+                                The hero container is a parent container for which content is stored.
+                            </p>
+                            <p>
+                                Here we set the background-color to the value of light-purple, center align the text (this aligns all child divs via inheritance), set the color to white (changes the tha text to #fff so it is readable and is high contrast to the light-purple background).
+                            </p>
+                            <p>We also hide the overflow so that if content overflows the container we hide it, and add padding to the bottom (10% of view) and 0 the margin.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.hero-container {
+    background-color: @light-purple;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    padding-bottom: 10%;
+    margin-bottom: 0;
+}
+                            </pre>
+                        </div>
+                        <div id="#hero-clear" class="hero-clear"></div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.hero</h3>
+                            <p>This class is used to deleniate the content in the hero-container, all we are doing here is adding a 75px padding to the top to give a nice gap from xl to xs screens, so you can see me in all my glory or whatever.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.hero {
+    padding-top: 75px; /*so that the avatar has a nice gap between the nav and itself*/
+}
+                            </pre>
+                        </div>
+                        <div id="#hero-clear" class="hero-clear"></div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.hero img</h3>
+                            <p>This sets the style properties for <b>ALL IMG</b> elements in an element with the class .hero.</p>
+                            <p>I set the border-radius to 50% so that the image becomes circular, I also added -webkit and -moz for cross browser compatability. If you want to learn more you can over at <a href="https://www.w3schools.com/howto/howto_css_rounded_images.asp">W3 Schools</a>, this is something I already knew how to do though.</p>
+                            <p>In addition to making the image circular, I set the width to 200px, and using margin and border I create a solid border that is a darker purple than the background light-purple for well, because I thought it looked nice.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.hero img{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    margin: 4px;
+    border: 4px solid @purple;
+    width: 200px;
+}
+                            </pre>
+                        </div>
+                        <div id="#hero-clear" class="hero-clear"></div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.hero-clear</h3>
+                            <p>Read the comment, in the example div. This is a work around for making child divs in a wrapper div float next to each other nicely, like these divs or the about / contact div on the home page.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+/* https://stackoverflow.com/questions/1844207/how-to-make-a-div-to-wrap-two-float-divs-inside */
+#hero-clear, .hero-clear {
+    clear: both;
+}
+                            </pre>
+                        </div>
+                        <div id="#hero-clear" class="hero-clear"></div>
+                    </div>               
+                </div>
+                <button onclick="toggleAccordian('navbar-comments')" class="accordian-button">Navbar Comments</button>
+                <div id="navbar-comments" class="show-accordian">
+                    <h2>Navbar Classes</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+                <button onclick="toggleAccordian('container-comments')" class="accordian-button">Container Comments</button>
+                <div id="container-comments" class="show-accordian">
+                    <h2>Container Classes</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+                <button onclick="toggleAccordian('experience-comments')" class="accordian-button">Experience Comments</button>
+                <div id="experience-comments" class="show-accordian">
+                    <h2>Experience Classes</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+                <button onclick="toggleAccordian('media-comments')" class="accordian-button">Media Comments</button>
+                <div id="media-comments" class="show-accordian">
+                    <h2>Media Classes</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+                <button onclick="toggleAccordian('misc-comments')" class="accordian-button">Misc Comments</button>
+                <div id="misc-comments" class="show-accordian">
+                    <h2>Misc Classes</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+                <button onclick="toggleAccordian('javascript-comments')" class="accordian-button">Javascript Comments</button>
+                <div id="javascript-comments" class="show-accordian">
+                    <h2>Javascript Classes</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="footer">
             <!-- Here because I need one per page (I don't really need it otherwise : https://www.w3schools.com/tags/tag_span.asp) I also needed to have a css class that used an id eg #footer-home-->

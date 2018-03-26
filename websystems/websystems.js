@@ -16,7 +16,8 @@ function toggleAccordian(id) {
 window.onload = function() {
     var accordians = document.getElementsByClassName("show-accordian");
 
-    // we need to get the ids in an array then toggle each, we do this because if we change the class we are selecting on then the array accordians will be shortened each loop, try it out if you don't believe me (god I hate vanilla javascript, it's like a throw back to the hell of yesteryear).
+    // we need to get the ids in an array then toggle each, we do this because if we change the class we are selecting on then the array accordians will be shortened each loop, 
+    // try it out if you don't believe me (god I hate vanilla javascript, it's like a throw back to the hell of yesteryear).
 
     var accordianIds = []
     var accordiansLength = accordians.length;
@@ -28,15 +29,12 @@ window.onload = function() {
         toggleAccordian(accordianIds[i]);
 }
 
-// smooth scroll
-function smoothScrollTo(str){
-    document.querySelector(str).scrollIntoView({ 
-        behavior: 'smooth' 
-    });
-}
-
 document.getElementById('go-to-top').onclick = function() {
-    smoothScrollTo('#main-body')
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
     return false;
 };
 

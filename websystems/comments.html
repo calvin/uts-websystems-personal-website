@@ -31,6 +31,9 @@
                     <p>
                         Below are accordians that you can click on to show or hide the below divs, please note that when you see @variables that is because the examples are the LESS before it is compiled to CSS (lessc source destination)
                     </p>
+                    <p>
+                        Link on font sizes: <a href="https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/">https://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/</a>.
+                    </p>
                 </div>
                 <div class="contact"> <!-- I don't feel the need to duplicate this class, hence why I used contact here insted of say, comment-index -->
                     <h1>Index</h1>
@@ -40,8 +43,8 @@
                         <li><a href="#navbar-comments" class="" id="navbar-comments-link">Navbar</a></li>
                         <li><a href="#container-comments" class="" id="container-comments-link">Container</a></li>
                         <li><a href="#experience-comments" class="" id="experience-comments-link">Experience</a></li>
-                        <li><a href="#media-comments" class="" id="media-comments-link"></a>Media</li>
-                        <li><a href="#misc-comments" class="" id="misc-comments-link"></a>Misc</li>
+                        <li><a href="#media-comments" class="" id="media-comments-link">Media</a></li>
+                        <li><a href="#misc-comments" class="" id="misc-comments-link">Misc</a></li>
                         <li><a href="#javascript-comments" class="" id="javascript-comments-link">Javascript</a></li>
                     </ul>
                 </div>
@@ -156,45 +159,756 @@
                 </div>
                 <button onclick="toggleAccordian('navbar-comments')" class="accordian-button">Navbar Comments</button>
                 <div id="navbar-comments" class="show-accordian">
-                    <h2>Navbar Classes</h2>
-                    <p>
-                        
-                    </p>
-                </div>
+                        <div class="article">
+                                <h2>Navbar Classes</h2>
+                                <p>
+                                    The navbar classes refer to the navigation bar at the top of the screen that is common to all pages
+                                </p>
+                                <p>
+                                    It is not responsive like a bootstrop navbar where it collapses, this is to simplify the implementation.
+                                </p>
+                        </div>
+                        <div class="about-container">
+                            <div class="about">
+                                <h3>.nav-container</h3>
+                                <p>
+                                    This is the wrapper container for the navigation bar, it's background is dark-purple and it has padding of 50px.
+                                </p>
+                            </div>
+                            <div class="example">
+                                <pre>
+.nav-container {
+    background-color: @dark-purple;
+    padding: 0 50px;
+}
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="about-container">
+                            <div class="about">
+                                <h3>.navbar</h3>
+                                <p>
+                                    The navbar, we have a transition animation to ease in and out, 0 margine, the z-index is 1000 so it is always ontop of all elements in view.
+                                    <br/>
+                                    The background colour is dark purple, there is a border of 0 (no border), the font size is 12 px and the line-hieght and letter spacing is adjusted so that the text is readable and pops.
+                                </p>
+                                <p>In addition to that, the position is fixed to the top (position: fixed and top: 0) to keep it always on top, the width is 100% so it spans the entire screen, and there is a 4 px solid border of purple to give the navbar a slight 3D effect.</p>
+                            </div>
+                            <div class="example">
+                                <pre>
+.navbar {
+    transition: top 0.33s ease-in-out;
+    margin-bottom: 0;
+    background-color: @dark-purple;
+    z-index: 1000;
+    border: 0;
+    font-size: 12px ;
+    line-height: 1.42857143;
+    letter-spacing: 2px;
+    border-radius: 0;
+    border-bottom: 4px solid @purple;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+                                </pre>
+                            </div>
+                        </div>
+                        <div class="about-container">
+                            <div class="about">
+                                <h3>.navbar li a</h3>
+                                <p>
+                                    This sets the colour of text inside a and li elements that are children of an element with the class .navbar to be white.
+                                </p>
+                            </div>
+                            <div class="example">
+                            <pre>
+.navbar li a {
+    color: white;
+}
+                            </pre>
+                        </div>
+                    </div>                    
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.navbar-links</h3>
+                            <p>
+                                Sets links to have no list style type, have a margin of 0, no padding, hide content if they overflow from the parent div, and set's the background colour to dark-purple.
+                            </p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: @dark-purple;
+}
+                            </pre>
+                        </div>
+                    </div>  
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.navbar-links li</h3>
+                            <p>
+                                Maks all list elements that are children of an element with the class .navbar-links to float left.
+                            </p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.navbar-links li {
+    float: left;
+}
+                            </pre>
+                        </div>
+                    </div>   
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.navbar-links li a:hover</h3>
+                            <p>
+                                Child a elements in li elements under an element with the class .navbar-links will have the text color change to dark-purple, have the background change to white (#ffffff), have text-decoration set to none, and a margin bottom set to -4px when you hover over them.
+                            </p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.navbar-links li a:hover{
+    color: @dark-purple;
+    background-color: white;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: -4px;
+}
+                            </pre>
+                        </div>
+                    </div>   
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.navbar-links li a:active</h3>
+                            <p>
+                                Child a elements in li elements under an element with the class .navbar-links will have the text color kept white, have the background change to light-purple, have text-decoration set to none, and a margin bottom set to -4px when they have the class active.
+                            </p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.navbar-links li a.active {
+    color: white;
+    background-color: @light-purple;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: -4px;
+}
+                            </pre>
+                        </div>
+                    </div>  
+                </div>               
                 <button onclick="toggleAccordian('container-comments')" class="accordian-button">Container Comments</button>
                 <div id="container-comments" class="show-accordian">
-                    <h2>Container Classes</h2>
-                    <p>
-                        
-                    </p>
+                    <div class="article">
+                        <h2>Container Classes</h2>
+                        <p>
+                            This section goes through all the classes used on divs and containers
+                        </p>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.container</h3>
+                            <p>
+                                Simple class to float a div left and add padding of 5% to top and bottom of the div.
+                            </p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.container {
+    padding: 5% 0%;
+    float: left;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.about-container</h3>
+                            <p>An abbout container has a background-color of light-grey, it's position is relate, it takes up the entirety of the screen, overlow is hidden, and it is floated to the left.</p>
+                            <p>The parent div of this about div is an about-container.</p>
+                            <p>In addition it's display is flex and flex-grow is row wrap so that all divs inside (about and example in this case) are the same height and are responsive.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.about-container {
+    background: @light-grey;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    display: flex;
+    flex-grow: row wrap;
+}                               
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.about</h3>
+                            <p>It's this div here, the grey one.</p>
+                            <p>padding left, top, and bottom are 5% of view, padding right is 1.66%</p>
+                            <p>text is aligned left, the div is floated left, and the width is 50% of the screen</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.about {
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 1.66%;
+    text-align: left;
+    float: left;
+    width: 50%;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.contact</h3>
+                            <p>The contact page, think the contact section on the home page.</p>
+                            <p>padding is 5% on all, I could have simplified this with padding: 5%, left it as an example</p>
+                            <p>text is aligned left, the div is floated left, background is lighter-purple and the width is 1/2 of the screen width (33.33% repeat)</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.contact {
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: left;
+    float: left;
+    background: @lighter-purple
+    width: 33.33%;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.contact table</h3>
+                            <p>Applies styles to tables in an element with the class .contact</p>
+                            <p>Sets text in the table to be bolded.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.contact table {
+    font-weight: bold;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.contact a</h3>
+                            <p>Sets style on a elements inside elements with the clas .contact</p>
+                            <p>Text colour set to black, no background-color (transparent), text-decoration set to none (remove underline).</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.contact a {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.contact a:visited</h3>
+                            <p>a elements that have the visited attribute and are in an element with the class .contact</p>
+                            <p>sets text colour to be black, sets background-color to be transparent.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.contact a:visited {
+    color: black;
+    background-color: transparent;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.contact a:hover</h3>
+                            <p>a elements that are being hovered over in an element that has the class .contact will have an underline shown to the user.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.contact a:hover {
+    text-decoration: underline
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.article</h3>
+                            <p>Simple container for an article / block of text that takes up the whole screen. it has padding top and bottom of 50px, and padding left and right of 5% of the screen.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.article {
+    padding: 50px 5%;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.lighter-purple-container</h3>
+                            <p>Set's background-colour to lighter-purple</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.lighter-purple-container {
+    background-color: @lighter-purple;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.grey-container</h3>
+                            <p>Sets the background-color to grey</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.grey-container {
+    background-color: @grey;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.light-grey-container</h3>
+                            <p>Sets the background-color to be light-grey</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.light-grey-container {
+    background-color: @light-grey;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.footer</h3>
+                            <p>Sets the style for the footer div / container.</p>
+                            <p>background-color is dark-purple, the div is floated left, it is fixed at the bottom of the page (bottom 0), it has a border at the top of 4px with the colour purple, it has a 20px padding top and bottom and a 5% screen padding on the left and right.</p>
+                            <p>The width of the div is also 90% of the screen (5% each side is 10%, 90% for content in the middle, 5*2 + 90 = 100.), and the colour of text is white for higher contrast.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.footer {
+    color: white;
+    bottom: 0;
+    background-color: @dark-purple;
+    float: left;
+    padding: 20px 5%;
+    width: 90%;
+    margin-top: 0;
+    border-top: 4px solid @purple;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.footer a</h3>
+                            <p>a elements in elements with the class .footer will have their color be alternate-text-colour (white), their background-color be transparent and have no text dexoration.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.footer a {
+    color: @alternate-text-colour;
+    background-color: transparent;
+    text-decoration: none;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.footer a:visited</h3>
+                            <p>for a elements in an element with the class .footer, if they are visited then override default and keep them looking the same as before but without overiding the text-decoration property.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.footer a:visited {
+    color: @alternate-text-colour;
+    background-color: transparent;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.footer a:hover</h3>
+                            <p>adds text-decoration underline when you hover on an a element in an element with the class .footer.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.footer a:hover {
+    text-decoration: underline
+}
+                            </pre>
+                        </div>
+                    </div>
                 </div>
                 <button onclick="toggleAccordian('experience-comments')" class="accordian-button">Experience Comments</button>
                 <div id="experience-comments" class="show-accordian">
-                    <h2>Experience Classes</h2>
-                    <p>
-                        
-                    </p>
-                </div>
+                    <div class="article">
+                        <h2>Experience Classes</h2>
+                        <p>Here we'll go through all the classes etc that pertain to the expereinces under the past page.</p>
+                        <p>These were inspired by the experience section of the site <a href="http://mynameismosh.com">mynameismosh.com</a></p>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.work-experience, #work-experience</h3>
+                            <p>Targeting both id and class as we need atleast one class to target an id (this is bad practice yo, like up there with using !important).</p>
+                            <p>padding 5% top, bottom, left, and right.</p>
+                            <p>float left, text align left, width 50% of screen</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.work-experience, #work-experience {
+    padding: 5%;
+    text-align: left;
+    float: left;
+    width: 50%;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.academic-history, #academic-history</h3>
+                            <p>Targeting both id and class as we need atleast one class to target an id (this is bad practice yo, like up there with using !important).</p>
+                            <p>padding 5% top, bottom, left, and right.</p>
+                            <p>text align left, float left, background lighter-purple, and width set to 50% of screen</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.academic-history, #academic-history {
+    padding: 5%;
+    text-align: left;
+    float: left;
+    background: #c49cc2;
+    width: 50%;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.experience</h3>
+                            <p>Is a wrapper for a list that sets the padding ot 0 and sets the list style to none.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.experience {
+    list-style: none;
+    padding-left: 0;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.experience-details</h3>
+                            <p>sets the letter spacing of text in an element to 0.5px</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+                                .experience-details {
+                                    letter-spacing: 0.5px;
+                                }
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.experience-details li, .experience-details ul</h3>
+                            <p>sets list style of li and ul elements to none and sets the padding-left to 0.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.experience-details li, .experience-details ul{
+    list-style: none;
+    padding-left: 0;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.experience-details h3</h3>
+                            <p>Sets h3 elements inside an element with the class .experience-details to have their font-weight be bold and their margin-bottom be 0.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.experience-details h3 {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.institution-detail</h3>
+                            <p>Sets the font-wieght to bold and the size to 1.25em (scalable size) where an element has this class.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.institution-detail {
+    font-weight: bold;
+    font-size: 1.25em;
+}          
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.role-detail</h3>
+                            <p>sets font-size to 1em (superfluous, but here).</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.role-detail {
+    font-size: 1em;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.example</h3>
+                            <p>Sets padding top, left, right, and bottom to be 5% of screen (can be done with padding: 5%), floats left, aligns the text left, sets the backgrpound to white (#fff || #ffffff), amd makes it 1/3 the screen width (33.33% repeating)</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.example {
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: left;
+    float: left;
+    background: #ffffff;
+    width: 33.33%;
+} 
+                            </pre>
+                        </div>
+                    </div>
+                </div>            
                 <button onclick="toggleAccordian('media-comments')" class="accordian-button">Media Comments</button>
                 <div id="media-comments" class="show-accordian">
-                    <h2>Media Classes</h2>
-                    <p>
-                        
-                    </p>
+                    <div class="article">
+                        <h2>Media Classes</h2>
+                        <p>Here I'll break down the @media css bit.</p>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>@media screen and (max-width: 1000px)</h3>
+                            <p>This says that should the screen width go below 1000px then do the following:</p>
+                            <ul>
+                                <li>Set display to block for abour-container</li>
+                                <li>set width to 90% for classes .about, .contact, .work-experience, #work-experience, .academic-experience, #academic-experience, and .example</li>
+                            </ul>
+                            <h4>Let's break it down.</h4>
+                            <p>about-container goes to block, it was felx before so we could fit the divs side by side and make them the same height as the div to the left. This needs to be set to block so that we can make the divs "fold underneath" one-another for responsive design on smaller displays</p>
+                            <p>all the classes for divs that are in an about-container have there width set to 90%, (5% either side for padding + content at 90% = 100% screen width), so that as they are floating left, they will "fold underneath" eachother (right hand side div folds under left hand side).</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+@media screen and (max-width: 1000px) {
+    /*index break about and contact and make width 100%*/
+    .about-container {
+        display: block;
+    }
+    .about,
+    .contact,
+    .work-experience,
+    #work-experience,
+    .academic-history,
+    #academic-history,
+    .example {
+        width: 90%;
+    }
+}
+                            </pre>
+                        </div>
+                    </div>
                 </div>
                 <button onclick="toggleAccordian('misc-comments')" class="accordian-button">Misc Comments</button>
                 <div id="misc-comments" class="show-accordian">
-                    <h2>Misc Classes</h2>
-                    <p>
-                        
-                    </p>
+                    <div class="article">
+                        <h2>Misc Classes</h2>
+                        <p>This section will cover the remaining css classes not covered above.</p>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>html, body</h3>
+                            <p>This style forces the body and html to take up 100% of height and widhth, sets margin and padding to 0, and sets the font-family (order of preference for what you have, open sans > Arial > sans-serif)</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+html, body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>h1, h2, h3, h4, h5, h6</h3>
+                            <p>Sets the font family for all headings Roboto > sans-serif.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.show-accordian</h3>
+                            <p>this page uses accordians, show-accordians sets the display to block, this is used to show the display but is superfluous as really divs are by default displayed as a block, this is purely here for information and used for javacsript to act on (getElementsByClassName).</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.show-accordian {
+    display: block;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.hide-accordian</h3>
+                            <p>Sets the display to none, effectively hiding an element.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.hide-accordian {
+    display: none;
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.accordian-button</h3>
+                            <p>Used to make make the button appear as a fill width narrow div.</p>
+                            <p>We center the text and add a letter spacing of 1px to make the text pop. Then we set the background-color to dark-grey, display as a block, set the width to 100%, make the coour of the text alternate-text-colour (white), and add padding of 20px to give each button height.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+.accordian-button {
+    text-align: center;
+    display: block;
+    width: 100%;
+    background-color: @dark-grey;
+    color: @alternate-text-colour;
+    letter-spacing: 1px;
+    padding: 20px;
+
+}
+                            </pre>
+                        </div>
+                    </div>
                 </div>
                 <button onclick="toggleAccordian('javascript-comments')" class="accordian-button">Javascript Comments</button>
                 <div id="javascript-comments" class="show-accordian">
-                    <h2>Javascript Classes</h2>
-                    <p>
-                        
-                    </p>
+                    <div class="article">
+                        <h2>Javascript Rundown</h2>
+                        <p>This site has a very limited amount of javascript, mainly for a scroll to top function, showing and hiding these accordians, and smooth scrolling.</p>
+                        <p><b>Please Note:</b> if you have view issues with the code in the example div, you can also inspect the page and view the scripts under source > websystems.js</p>
+
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>toggleAccordian(id)</h3>
+                            <p>This function toggles an accordian div from show to hide and vice versa.</p>
+                            <p>First we get the element by it's id, then if the class name doesn't have show-accordian we replace hide-accordian with show-accordian and vice versa.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+// Accordian, from https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_accordion 
+// addapted so I do not have to use !Importa
+function toggleAccordian(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("show-accordian") == -1)
+        x.className = x.className.replace("hide-accordian", "show-accordian");
+    
+    else 
+        x.className = x.className.replace("show-accordian", "hide-accordian");
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>window.onload</h3>
+                            <p>on window.onload execute a function that goes through and sets accordiands to be closed. They are open by default so that if javascript is disabled, the user can still view the content.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+// if accordians, toggle close (they are open by default incase javascript is disabled).
+// see this excellent answer for why I wish I could use JQuery $(document).ready would have sufficed as I just need to maniplate the accordians when the DOM is ready.
+window.onload = function() {
+    var accordians = document.getElementsByClassName("show-accordian");
+
+    // we need to get the ids in an array then toggle each, we do this because if we change the class we are selecting on then the array accordians will be shortened each loop, 
+    // try it out if you don't believe me (god I hate vanilla javascript, it's like a throw back to the hell of yesteryear).
+
+    var accordianIds = []
+    var accordiansLength = accordians.length;
+
+    for (var i = 0; i &lt accordiansLength; i++)
+        accordianIds.push(accordians[i].id);
+
+    for(var i = 0; i &lt accordiansLength; i ++)
+        toggleAccordian(accordianIds[i]);
+}
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>document.getElementById('go-to-top').onclick</h3>
+                            <p>Add a function to elements with the id go-to-top and make it scroll to the top left corner of the screen with a smooth behaviour.</p>
+                        </div>
+                        <div class="example">
+                            <pre>
+document.getElementById('go-to-top').onclick = function() {
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+    return false;
+};
+                            </pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

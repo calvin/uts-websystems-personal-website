@@ -26,9 +26,6 @@
                         This page runs through the layout of this website, the CSS classes used, the design and why it was built like this.
                     </p>
                     <p>
-                        To the right is the comments index, you can click the links in it to be taken to the relevent section.
-                    </p>
-                    <p>
                         Below are accordians that you can click on to show or hide the below divs, please note that when you see @variables that is because the examples are the LESS before it is compiled to CSS (lessc source destination)
                     </p>
                     <p>
@@ -38,7 +35,9 @@
                 <div class="contact"> <!-- I don't feel the need to duplicate this class, hence why I used contact here insted of say, comment-index -->
                     <h1>Index</h1>
                     <ul>
-                        <li><a href="#layout-comments" class="" id="layout-comments-link">Colour Scheme</a></li>
+                        <li><a href="#colour-comments" id="colour-comments-link">Colour Scheme</a></li>
+                        <li><a href="#layout-comments" class="" id="layout-comments-link">Layout</a></li>
+                        <li><a href="#comments-article" id="comments-article-link">Comments Article</a></li>
                         <li><a href="#hero-comments" class="" id="hero-comments-link">Hero</a></li>
                         <li><a href="#navbar-comments" class="" id="navbar-comments-link">Navbar</a></li>
                         <li><a href="#container-comments" class="" id="container-comments-link">Container</a></li>
@@ -50,7 +49,7 @@
                 </div>
                 <div id="#hero-clear" class="hero-clear"></div>
             </div>
-            <div class="article">
+            <div id="colour-comments" class="article">
                 <h1>Colour Scheme</h1>
                 <p>Quick note, I'm not going to go through the wireframing or the layout here because you can see for yourself how each page is laid out on this site by navigating to the 4 pages (including this one).</p>
                 <h2>Colours</h2>
@@ -68,6 +67,45 @@
                     <li>@light-grey: #eaeaea;</li>
                     <li>@alternate-text-colour: white;</li>
                 </ul>
+            </div>
+            <div id="layout-comments" class="article light-grey-container">
+                <h1>Layout</h1>
+                <p>
+                    Each page has been built to run on IE 10+, Edge, Chrome, Mozila Firefox, Safari, and Opera.<br/>
+                    With regards to &lt IE 10, users will not see the divs that are side by side in a wrapper div with display as flex.
+                </p>
+                <p>Every Website shares the same Head, div.footer, and div.nav-container (active class set on the current page). Unique content per page is in the #main-body div.</p>
+                <p>Further to above, normally I would not repeat the navbar, footer, or head elements per page as this violates the DRY (don't repeat yourself) principle, here we have because the assesment limited students to use only html, css, and optionally javascript (but the page had to work with it disabled if needed).</p>
+                <h2>Layout | Home</h2>
+                <p>
+                    The home page (index.html) is comprised of a Hero-container Div, an about-container div, and an article div.<br/>
+                    There is an about-container with two divs side by side with content to maximize content on the page without the user having to scroll far.
+                </p>
+                <p>The hero-container or jumbotron is there as a kind of a master element that draws the users eyes to the center to see me (this is a personal page after all), and the message "Hello, I'm Dylan. I'm a sysadmin." which tells you my name and what I do; it's a friendly greeting.</p>
+                <p>The div.about-container>div.about has a short bio for me to get you to know me.</p>
+                <p>
+                    The div.about-container>div.contact also has a different background colour from the about div so that it is easier to tell the difference between the two.<br/>
+                    In addition to this, the div also contains the single required table in the website. This table has some contact information for me (my email and my linkedin page). You should avoid using tables if you can as they don't work very well with responsive design (view the website on a mobile to find out).
+                </p>
+                <h2>Layout | Past</h2>
+                <p>
+                    The past page (past.html) is comprised of an article div, and an about-container div.<br/>
+                    This page contains further information about my past, and in the about-container my work experience and educational experience are laid side by side. <br/>
+                    The work experience and about experience are covered below in the experience section, the reason for them being side by side is to maximize the content on the screen without having the user scroll far.
+                </p>
+                <h2>Layout | Future</h2>
+                <p>The future page (future.html) is comprised of 3 article divs. The divs cover what I want to get out of this course (more money), if I'm going to switch from the windows stack to linux (maybe, for money), and what else am I going to do in the future.</p>
+                <p>As there is not a lot of content I have not aligned any divs side by side, they didn't need to be.</p>
+                <p>The middle article div also has the class light-grey-container so that it is grey, the divs alternate between white, grey, and white backgrounds for aesthetic reason (break up the whitespace).</p>
+                <h2>Layout | Comments</h2>
+                <p>The comments page (comments.html) is comprised of an about-container, and 3 articles (the middle being a light-grey-container to break up whitespace).</p>
+                <p>In the about-container there is a quick rundown of what this page is about and an index page</p>
+                <p>Following this there is an article div for the colour scheme, after this (this div) a div about layout, then the comments article which gives a quick summary about the accordians, and finally the accordians with more granular comments on CSS and javascript.</p>
+            </div>
+            <div id="comments-article" class="article">
+                <h1>CSS and Javascript Comments</h1>
+                <p>Below are accordians that you can open or close by clicking on the grey buttons. <b>If javascript is disabled they will all be open by default.</b></p>
+                <p>Each class and script have comments about what they do as well as the class or code to the right (bottom if on a small screen) of the comment.</p>
             </div>
             <div>
                 <button onclick="toggleAccordian('hero-comments')" class="accordian-button">Hero Comments</button>

@@ -5,7 +5,7 @@
 
 The website is a simple "About yourself" website with simple html and css files.
 
-This is available at [www-student.it.uts.edu.au](http://www-student.it.uts.edu.au/~dwest/index.html);
+This is available at [www-student.it.uts.edu.au](http://www-student.it.uts.edu.au/~dwest/websystems);
 
 ## Further Disclaimers
 If you are a student other than 13247818 at UTS, you can't clone this and change

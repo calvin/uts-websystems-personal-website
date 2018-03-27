@@ -2,12 +2,12 @@
 <html lang="en">
     <head>
         <link href="./websystems.css" rel="stylesheet">
-        <meta http-equiv="x-ua-compatible" content="IE=Edge">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
         <title>Dylan West - comments</title>
     </head>
-    <body>
+    <body>clear
         <div class="navbar">
             <div class="navbar-container">
                 <ul class="navbar-links">
@@ -73,7 +73,7 @@
                 <h1>Layout</h1>
                 <p>
                     Each page has been built to run on IE 10+, Edge, Chrome, Mozila Firefox, Safari, and Opera.<br/>
-                    With regards to &lt IE 10, users will not see the divs that are side by side in a wrapper div with display as flex.
+                    With regards to &lt; IE 10, users will not see the divs that are side by side in a wrapper div with display as flex.
                 </p>
                 <p>Every Website shares the same Head, div.footer, and div.nav-container (active class set on the current page). Unique content per page is in the #main-body div.</p>
                 <p>Further to above, normally I would not repeat the navbar, footer, or head elements per page as this violates the DRY (don't repeat yourself) principle, here we have because the assesment limited students to use only html, css, and optionally javascript (but the page had to work with it disabled if needed).</p>
@@ -922,10 +922,10 @@ window.onload = function() {
     var accordianIds = []
     var accordiansLength = accordians.length;
 
-    for (var i = 0; i &lt accordiansLength; i++)
+    for (var i = 0; i &lt; accordiansLength; i++)
         accordianIds.push(accordians[i].id);
 
-    for(var i = 0; i &lt accordiansLength; i ++)
+    for(var i = 0; i &lt; accordiansLength; i ++)
         toggleAccordian(accordianIds[i]);
 }
                             </pre>
@@ -955,11 +955,11 @@ document.getElementById('go-to-top').onclick = function() {
         <div class="footer">
             <!-- Here because I need one per page (I don't really need it otherwise : https://www.w3schools.com/tags/tag_span.asp) I also needed to have a css class that used an id eg #footer-home-->
             <div id="#footer-home">
-                <span>&copy 2018 - Dylan West - <a href="mailto:dylan@wests.me">dylan@wests.me</a></span>
-                </br>
+                <span>&copy; 2018 - Dylan West - <a href="mailto:dylan@wests.me">dylan@wests.me</a></span>
+                <br/>
                 <a id="go-to-top" href="#">Go back to the top of the page?</a>
             </div>
         </div>
+        <script src="./websystems.js"></script>        
     </body>
-    <script src="./websystems.js"></script>    
 </html>

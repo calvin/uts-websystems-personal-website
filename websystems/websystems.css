@@ -110,7 +110,8 @@ I have some java script to hide the navbar on scroll aswell though.
 .navbar-links li {
   float: left;
 }
-.navbar-links li a:hover {
+.navbar-links li a:hover,
+.dropdown:hover .dropdown-btn {
   color: #5e315c;
   background-color: white;
   text-decoration: none;
@@ -123,6 +124,42 @@ I have some java script to hide the navbar on scroll aswell though.
   text-decoration: none;
   position: relative;
   margin-bottom: -4px;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropdown-btn {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  color: white;
+  background: inherit;
+  font-size: 12px ;
+  line-height: 1.42857143;
+  letter-spacing: 2px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #753f73;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: #eaeaea;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 /*
 Containers and Divs
@@ -138,7 +175,6 @@ Containers and Divs
   overflow: hidden;
   float: left;
   display: flex;
-  flex-grow: row wrap;
 }
 .about {
   padding-left: 5%;

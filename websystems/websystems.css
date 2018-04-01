@@ -125,6 +125,9 @@ I have some java script to hide the navbar on scroll aswell though.
   position: relative;
   margin-bottom: -4px;
 }
+.navbar-collapsable li div.dropdown {
+  display: none;
+}
 .dropdown {
   float: left;
   overflow: hidden;
@@ -329,5 +332,12 @@ Media
   #academic-history,
   .example {
     width: 90%;
+  }
+  .navbar-collapsable li a {
+    display: none;
+  }
+  .navbar-collapsable li div.dropdown,
+  .navbar-collapsable li div.dropdown a {
+    display: block;
   }
 }

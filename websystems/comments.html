@@ -460,6 +460,17 @@
                             </pre>
                         </div>
                     </div>
+                    <div class="about-container">
+                        <div class="about">
+                            <h3>.navbar-collapsable</h3>
+                            <p>simply hides a dropdown menu if it is in a div with this class. Look at @media to see why this is needed and how it is used.</p>
+                        </div>
+                        <pre>
+.navbar-collapsable li div.dropdown {
+    display: none;
+}
+                        </pre>
+                    </div>
                 </div>               
                 <button onclick="toggleAccordian('container-comments')" class="accordian-button">Container Comments</button>
                 <div id="container-comments" class="show-accordian">
@@ -883,26 +894,30 @@
                             <ul>
                                 <li>Set display to block for abour-container</li>
                                 <li>set width to 90% for classes .about, .contact, .work-experience, #work-experience, .academic-experience, #academic-experience, and .example</li>
+                                <li>Hides all anchor tags that are in a div that has the class .navbar-collapsable, and then overrides this by showing any links in navbar-collapsable, that are also in a div with the class dropdown.</li>
                             </ul>
                             <h4>Let's break it down.</h4>
                             <p>about-container goes to block, it was felx before so we could fit the divs side by side and make them the same height as the div to the left. This needs to be set to block so that we can make the divs "fold underneath" one-another for responsive design on smaller displays</p>
                             <p>all the classes for divs that are in an about-container have there width set to 90%, (5% either side for padding + content at 90% = 100% screen width), so that as they are floating left, they will "fold underneath" eachother (right hand side div folds under left hand side).</p>
+                            <p>.navbar-collapsable is used only on the websystems part of the assessment, not in the main page. this is used to make navigating the website on a phone easier on a mobile.</p>
                         </div>
                         <div class="example">
                             <pre>
-@media screen and (max-width: 1000px) {
-    /*index break about and contact and make width 100%*/
+@media screen and (max-width: 1000px) { /*index break about and contact and make width 100%*/
     .about-container {
-        display: block;
+        display: block
     }
-    .about,
-    .contact,
-    .work-experience,
-    #work-experience,
-    .academic-history,
-    #academic-history,
-    .example {
+
+    .about, .contact, .work-experience, #work-experience, .academic-history, #academic-history, .example {
         width: 90%;
+    }
+
+    .navbar-collapsable li a {
+        display: none;
+    }
+
+    .navbar-collapsable li div.dropdown, .navbar-collapsable li div.dropdown a{
+        display: block;
     }
 }
                             </pre>

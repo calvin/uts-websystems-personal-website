@@ -51,12 +51,8 @@ https://www.w3schools.com/howto/howto_css_rounded_images.asp
     text-align: center;
     color: white;
     overflow: hidden;
-    padding-bottom: 10%;
+    padding: 10%;
     margin-bottom: 0;
-}
-
-.hero {
-    padding-top: 75px; /*so that the avatar has a nice gap between the nav and itself*/
 }
 
 .hero img{
@@ -197,13 +193,23 @@ Containers and Divs
     float: left;
 }
 
-.about-container {
+.comments-container
+{
     background: @light-grey;
     position: relative;
     width: 100%;
     overflow: hidden;
     float: left;
     display: flex;
+}
+
+.about-container {
+    background: @light-grey;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    display: block;
 }
 
 .about {
@@ -263,6 +269,7 @@ Containers and Divs
 
 .article {
     padding: 50px 5%;
+    float: left;
 }
 
 .lighter-purple-container {
@@ -381,7 +388,7 @@ Media
 */
 
 @media screen and (max-width: 1000px) { /*index break about and contact and make width 100%*/
-    .about-container {
+    .comments-container {
         display: block
     }
 

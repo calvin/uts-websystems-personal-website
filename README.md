@@ -4,7 +4,7 @@
 
 ## Author       : Dylan West (dwest)
 
-## Project Type : First Year University Assessment.
+## Project Type : First Year University Assessment
 
 The website is a simple "About yourself" website with simple html and css files.
 
@@ -33,7 +33,7 @@ git clone https://github.com/dtwest/uts-websystems-personal-website.git
 If you want to do development or compile less and ts files, enter the following commands after the first lot:
 
 ```bash
-cd uts-wensystems-personal-website
+cd uts-websystems-personal-website
 
 sudo npm install -g less
 ```
@@ -41,13 +41,7 @@ sudo npm install -g less
 ### Compiling Less
 
 LESS:
-```
+
+```Bash
 lessc websystems.less websystems.css
 ```
-
-## Things I miss
-
-* JQuery
-* Angular
-* Bootstrap
-* anything modern
